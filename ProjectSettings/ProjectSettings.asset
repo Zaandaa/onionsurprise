@@ -10,8 +10,8 @@ PlayerSettings:
   targetPlatform: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: Microsoft
-  productName: onionsurprise
+  companyName: Cool
+  productName: Onion Surprise
   AndroidLicensePublicKey: 
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -59,7 +59,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   debugUnloadMode: 0
-  iPhoneBundleIdentifier: com.Company.ProductName
+  iPhoneBundleIdentifier: com.Cool.OnionSurprise
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 6
