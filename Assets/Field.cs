@@ -13,7 +13,7 @@ public class Field : MonoBehaviour {
 	
 	void Update () {
 		Vector3 angleValue;
-		#if !UNITY_EDITOR && UNITY_ANDROID
+		#if UNITY_ANDROID
 			if (Input.gyro.enabled) {
 				Debug.Log("Using gyro: " + Input.gyro.attitude.eulerAngles.ToString());
 				angleValue = Input.gyro.attitude.eulerAngles;
