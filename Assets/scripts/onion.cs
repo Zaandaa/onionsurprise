@@ -21,7 +21,7 @@ public class onion : MonoBehaviour {
 	
 	IEnumerator spawntimer(){
 		yield return new WaitForSeconds(2f);
-		transform.position = spawnpos;
+		//transform.position = spawnpos;
 		
 	}
 	
