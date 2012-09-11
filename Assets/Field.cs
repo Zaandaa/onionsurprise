@@ -13,42 +13,32 @@ public class Field : MonoBehaviour {
 	
 	void Update () {
 		Vector3 angleValue;
-		#if UNITY_ANDROID
-			if (Input.gyro.enabled) {
-				Debug.Log("Using gyro: " + Input.gyro.attitude.eulerAngles.ToString());
-				angleValue = Input.gyro.attitude.eulerAngles;
+		
+		if (Input.gyro.enabled) {
+			Debug.Log("Using gyro: " + Input.gyro.attitude.eulerAngles.ToString());
+			angleValue = Input.gyro.attitude.eulerAngles;
+		} else if (Input.acceleration != Vector3.zero) {
+			Debug.Log("Using accel: " + Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles.ToString());
+			if (Input.acceleration.normalized == Vector3.zero) {
+				angleValue = Vector3.zero;
 			} else {
-				Debug.Log("Using accel: " + Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles.ToString());
-				if (Input.acceleration.normalized == Vector3.zero) {
-					angleValue = Vector3.zero;
-				} else {
-					angleValue = Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles;
-				}
+				angleValue = Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles;
 			}
-		#else
-			/*
-			angleValue = Vector3.zero;
-			
-			angleValue.z = angleCap.z * Input.GetAxis("Horizontal");
-			angleValue.x = angleCap.x * Input.GetAxis("Vertical");
-			*/
-		
-			/**/
+		} else {
 			angleValue = Vector3.zero;
 		
-			if (Input.GetKey(KeyCode.A)) {
+			if (Input.GetKey(KeyCode.D)) {
 				angleValue.z = -angleCap.z;
-			} else if (Input.GetKey(KeyCode.D)) {
+			} else if (Input.GetKey(KeyCode.A)) {
 				angleValue.z = angleCap.z;
 			}
 		
-			if (Input.GetKey(KeyCode.W)) {
+			if (Input.GetKey(KeyCode.S)) {
 				angleValue.x = -angleCap.x;
-			} else if (Input.GetKey(KeyCode.S)) {
+			} else if (Input.GetKey(KeyCode.W)) {
 				angleValue.x = angleCap.x;
 			}
-			/**/
-		#endif
+		}
 		
 		angleValue = Vector3.Scale(angleValue, angleScale);
 		
