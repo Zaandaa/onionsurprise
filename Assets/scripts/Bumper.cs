@@ -2,10 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class Bumper : MonoBehaviour {
-	float force;
+	public float force = 1.0f;
 	
 	void Start () {
-		force = 5.0f;
+		
 	}
 	
 	void Update () {
@@ -13,12 +13,14 @@ public class Bumper : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider c) {
-		Debug.Log(c.name);
-		if (c.rigidbody) {
-			Debug.Log("Bump");
-			Vector3 forceVector = -transform.forward.normalized;
-			forceVector.Scale(new Vector3(force, force, force));
-			c.rigidbody.AddForce(forceVector);
+		if (c.name == "Onion") {
+			Vector3 directionVector = transform.up.normalized;
+			
+			Vector3 velocityVector = Vector3.Project(c.rigidbody.velocity, directionVector);
+			
+			velocityVector.Scale(new Vector3(-1 - force, -1 - force, -1 - force));
+			
+			c.rigidbody.velocity += velocityVector;
 		}
 	}
 }
