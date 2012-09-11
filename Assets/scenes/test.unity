@@ -378,7 +378,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c76050ea02597b94ebc60231b840548d, type: 1}
   m_Name: 
-  force: 0
+  force: 1
 --- !u!1 &653463705
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c76050ea02597b94ebc60231b840548d, type: 1}
   m_Name: 
-  force: 0
+  force: 4
 --- !u!1 &1471875541
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,6 +938,7 @@ Transform:
   - {fileID: 1471875542}
   - {fileID: 1102726605}
   - {fileID: 1633961231}
+  - {fileID: 1854435166}
   m_Father: {fileID: 0}
 --- !u!114 &1505865273
 MonoBehaviour:
@@ -1188,7 +1189,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c76050ea02597b94ebc60231b840548d, type: 1}
   m_Name: 
-  force: 0
+  force: 4
 --- !u!1 &1788926830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,7 +1401,7 @@ Transform:
   m_LocalPosition: {x: -2.67160988, y: 30.6537704, z: -12.537117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1505865272}
 --- !u!108 &1854435167
 Light:
   m_ObjectHideFlags: 0
@@ -1590,7 +1591,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c76050ea02597b94ebc60231b840548d, type: 1}
   m_Name: 
-  force: 0
+  force: 1
 --- !u!1 &2038064837
 GameObject:
   m_ObjectHideFlags: 0
