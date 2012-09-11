@@ -8,7 +8,8 @@ public class Field : MonoBehaviour {
 	static Vector3 angleScale = new Vector3(0.5f, 0.0f, 0.5f);
 	
 	void Start () {
-		
+		Input.compass.enabled = true;
+		Input.gyro.enabled = true;
 	}
 	
 	void Update () {
@@ -17,11 +18,14 @@ public class Field : MonoBehaviour {
 		if (Input.gyro.enabled) {
 			Debug.Log("Using gyro: " + Input.gyro.attitude.eulerAngles.ToString());
 			angleValue = Input.gyro.attitude.eulerAngles;
-		} else if (Input.acceleration != Vector3.zero) {
+		//} else if (Input.acceleration != Vector3.zero) {
+		} else if (Input.compass.enabled) {
 			Debug.Log("Using accel: " + Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles.ToString());
 			if (Input.acceleration.normalized == Vector3.zero) {
 				angleValue = Vector3.zero;
 			} else {
+				//Vector3 accel = Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles;
+				//angleValue = Vector3(accel.y, 0.0f, accel.x);
 				angleValue = Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles;
 			}
 		} else {
