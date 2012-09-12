@@ -22,7 +22,7 @@ public class Field : MonoBehaviour {
 			angleValue = Input.gyro.attitude.eulerAngles;
 		} else if (Input.acceleration != Vector3.zero) {
 //		} else if (Input.compass.enabled) {
-			Debug.Log("Using accel: " + Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles.ToString());
+			//Debug.Log("Using accel: " + Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles.ToString());
 			if (Input.acceleration.normalized == Vector3.zero) {
 				angleValue = Vector3.zero;
 			} else {
@@ -58,7 +58,7 @@ public class Field : MonoBehaviour {
 		float x = angleValue.x;
 		angleValue.x = Mathf.Clamp(-angleValue.y, -angleCap, angleCap);
 		angleValue.y = 0f;//Mathf.Clamp(angleValue.y, -angleCap, angleCap);
-		angleValue.z = Mathf.Clamp(-x, -angleCap, angleCap);\
+		angleValue.z = Mathf.Clamp(-x, -angleCap, angleCap);
 		
 		transform.rotation = Quaternion.Euler(angleValue);
 	}
