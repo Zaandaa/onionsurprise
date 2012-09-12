@@ -6,6 +6,7 @@ public class onion : MonoBehaviour {
 	public GameObject explosion;
 	public int lives = 3;
 	Vector3 spawnpos;
+	public GameObject TM;
 	
 	
 	// Use this for initialization
@@ -16,10 +17,18 @@ public class onion : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(lives < 0){
+			TM.GetComponent<touchscript>().RecordScores();
+			Destroy(gameObject);
+			
+			
+		}
+			
 	
 	}
 	
 	IEnumerator spawntimer(){
+		lives--;
 		yield return new WaitForSeconds(2f);
 		transform.position = spawnpos;
 		
@@ -32,7 +41,7 @@ public class onion : MonoBehaviour {
 			//spawn the explosion
 			Instantiate(explosion, transform.position, transform.rotation);
 			//get rid of onion for a little while
-			//transform.position = new Vector3(100, 100, -100);
+			transform.position = new Vector3(100, 100, -100);
 			StartCoroutine(spawntimer());
 			
 		}
