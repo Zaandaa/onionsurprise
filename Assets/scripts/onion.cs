@@ -30,7 +30,7 @@ public class onion : MonoBehaviour {
 	IEnumerator spawntimer(){
 		lives--;
 		yield return new WaitForSeconds(2f);
-		//transform.position = spawnpos;
+		transform.position = spawnpos;
 		
 	}
 	

@@ -10,7 +10,7 @@ public class big_flower : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		original_size = transform.localScale;
-		
+		transform.localRotation = Quaternion.identity; // I don't understand...
 	}
 	
 	// Update is called once per frame
