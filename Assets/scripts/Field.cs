@@ -31,19 +31,19 @@ public class Field : MonoBehaviour {
 				angleValue = Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles;
 			}
 		} else {
-//			angleValue = Vector3.zero;
-//		
-//			if (Input.GetKey(KeyCode.D)) {
-//				angleValue.z = -angleCap;
-//			} else if (Input.GetKey(KeyCode.A)) {
-//				angleValue.z = angleCap;
-//			}
-//		
-//			if (Input.GetKey(KeyCode.S)) {
-//				angleValue.x = -angleCap;
-//			} else if (Input.GetKey(KeyCode.W)) {
-//				angleValue.x = angleCap;
-//			}
+			angleValue = Vector3.zero;
+		
+			if (Input.GetKey(KeyCode.D)) {
+				angleValue.z = -angleCap;
+			} else if (Input.GetKey(KeyCode.A)) {
+				angleValue.z = angleCap;
+			}
+		
+			if (Input.GetKey(KeyCode.S)) {
+				angleValue.x = -angleCap;
+			} else if (Input.GetKey(KeyCode.W)) {
+				angleValue.x = angleCap;
+			}
 		}
 		
 		//angleValue = Vector3.Scale(angleValue, angleScale);
@@ -58,9 +58,7 @@ public class Field : MonoBehaviour {
 		float x = angleValue.x;
 		angleValue.x = Mathf.Clamp(-angleValue.y, -angleCap, angleCap);
 		angleValue.y = 0f;//Mathf.Clamp(angleValue.y, -angleCap, angleCap);
-		angleValue.z = Mathf.Clamp(-x, -angleCap, angleCap);
-		
-		print (angleValue);
+		angleValue.z = Mathf.Clamp(-x, -angleCap, angleCap);\
 		
 		transform.rotation = Quaternion.Euler(angleValue);
 	}
