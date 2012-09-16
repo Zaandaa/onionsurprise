@@ -85,6 +85,7 @@ public class sprout_spawner : MonoBehaviour {
 				//inst.transform.rotation = transform.parent.rotation;
 				//inst.transform.localRotation = Quaternion.identity;
 				inst.transform.localPosition = coords1;
+				inst.GetComponent<sprout>().is_top = true;
 				
 				inst = Instantiate(sprout) as GameObject;
 				
@@ -92,6 +93,7 @@ public class sprout_spawner : MonoBehaviour {
 				//inst.transform.rotation = transform.parent.rotation;
 				//inst.transform.localRotation = Quaternion.identity;
 				inst.transform.localPosition = coords2;
+				inst.GetComponent<sprout>().is_top = false;
 			}
 			
 			Debug.Log(tries);

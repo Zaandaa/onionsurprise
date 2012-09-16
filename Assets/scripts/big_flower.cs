@@ -5,7 +5,10 @@ public class big_flower : MonoBehaviour {
 	
 	public float timer = 0f;
 	public int points = 0;
+	public bool is_top;
 	Vector3 original_size;
+	
+	
 	
 	// Use this for initialization
 	void Start () {
