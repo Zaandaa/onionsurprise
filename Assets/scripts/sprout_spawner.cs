@@ -94,7 +94,7 @@ public class sprout_spawner : MonoBehaviour {
 				inst.transform.localPosition = coords2;
 			}
 			
-			Debug.Log(tries);
+			//Debug.Log(tries);
 			
 			timer -= spawn_interval;
 			
