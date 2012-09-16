@@ -60,7 +60,7 @@ public class Field : MonoBehaviour {
 		angleValue.y = 0f;//Mathf.Clamp(angleValue.y, -angleCap, angleCap);
 		angleValue.z = Mathf.Clamp(-x, -angleCap, angleCap);
 		
-		print (angleValue);
+		//print (angleValue);
 		
 		transform.rotation = Quaternion.Euler(angleValue);
 	}
