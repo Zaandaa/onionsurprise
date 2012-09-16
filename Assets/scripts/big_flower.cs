@@ -10,16 +10,15 @@ public class big_flower : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		original_size = transform.localScale;
-		
-		//animation.Play();
-		
+		transform.localRotation = Quaternion.identity; // I don't understand...
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer+= Time.deltaTime;
 		
-		if(timer < 1f)
+		/*if(timer < 1f)
 			points = 0;
 		else if(timer < 3f){
 			points = 1;
@@ -37,7 +36,7 @@ public class big_flower : MonoBehaviour {
 			if(transform.localScale != original_size*1.5f)
 				transform.localScale = original_size*1.5f;
 			
-		}
+		}*/
 		
 	
 	}

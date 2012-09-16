@@ -43,7 +43,7 @@ public class onion : MonoBehaviour {
 			//get rid of onion for a little while
 			transform.position = new Vector3(100, 100, -100);
 			StartCoroutine(spawntimer());
-			
+			rigidbody.velocity = Vector3.zero;
 		}
 		
 	}
