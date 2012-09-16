@@ -14,9 +14,9 @@ public class sprout_spawner : MonoBehaviour {
 	
 	int maxSpawnTries = 15;
 	
-	float bufferSize = 0.5f;
+	float bufferSize = 2.5f;
 	
-	static float minDistance = 1.0f;
+	static float minDistance = 7.0f;
 	
 	public GameObject bottom_left;
 	
@@ -26,8 +26,8 @@ public class sprout_spawner : MonoBehaviour {
 		//side_length = GetComponent<MeshRenderer>().bounds.size.z;
 		//side_width = transform.localScale.x * 2.0f;
 		//side_length = transform.localScale.z * 2.0f;
-		side_width = 10.0f; // I am so confused
-		side_length = 10.0f;
+		side_width = 50.0f;
+		side_length = 30.0f;
 		//side_width = transform.parent.GetComponent<MeshRenderer>().bounds.size.x * transform.parent.localScale.x;
 		//side_length = transform.parent.GetComponent<MeshRenderer>().bounds.size.z * transform.parent.localScale.z;
 		

@@ -15,6 +15,7 @@ public class little_flower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		/*
 		timer+= Time.deltaTime;
 		
 		if(timer < 1f){
@@ -32,7 +33,7 @@ public class little_flower : MonoBehaviour {
 				transform.localScale = original_size*1.3f;
 			
 		}
-		
+		*/
 	
 	}
 
