@@ -11,6 +11,8 @@ public class big_flower : MonoBehaviour {
 	void Start () {
 		original_size = transform.localScale;
 		
+		//animation.Play();
+		
 	}
 	
 	// Update is called once per frame
