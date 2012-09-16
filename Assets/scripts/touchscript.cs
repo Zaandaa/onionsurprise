@@ -143,19 +143,29 @@ public class touchscript : MonoBehaviour {
 					}
 					
 					if(hit.rigidbody.gameObject.name.Contains("big_flower")){
-						if(hit.rigidbody.gameObject.transform.parent.name == "bottom_side")
+						big_flower temp = hit.rigidbody.gameObject.GetComponent<big_flower>();
+						if(temp.is_top)
+							topscore += temp.points;
+						else
+							botscore += temp.points;
+						/*if(hit.rigidbody.gameObject.transform.parent.name == "bottom_side")
 							botscore += hit.rigidbody.gameObject.GetComponent<big_flower>().points;
 						else
 							topscore += hit.rigidbody.gameObject.GetComponent<big_flower>().points;
-						
+						*/
 						Destroy(hit.rigidbody.gameObject);
 					}
 					else if(hit.rigidbody.gameObject.name.Contains("little_flower")){
-						if(hit.rigidbody.gameObject.transform.parent.name == "bottom_side")
+						little_flower temp = hit.rigidbody.gameObject.GetComponent<little_flower>();
+						if(temp.is_top)
+							topscore += temp.points;
+						else
+							botscore += temp.points;
+						/*if(hit.rigidbody.gameObject.transform.parent.name == "bottom_side")
 							botscore += hit.rigidbody.gameObject.GetComponent<little_flower>().points;
 						else
 							topscore += hit.rigidbody.gameObject.GetComponent<little_flower>().points;
-						
+						*/
 						Destroy(hit.rigidbody.gameObject);
 						
 						

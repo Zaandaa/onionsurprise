@@ -14,6 +14,11 @@ public class big_flower : MonoBehaviour {
 	void Start () {
 		original_size = transform.localScale;
 		transform.localRotation = Quaternion.identity; // I don't understand...
+		
+		if(is_top)
+			transform.Rotate(0, 90, 0);
+		else
+			transform.Rotate(0, -90, 0);
 
 	}
 	
