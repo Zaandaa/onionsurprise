@@ -96,7 +96,7 @@ public class sprout_spawner : MonoBehaviour {
 				inst.GetComponent<sprout>().is_top = false;
 			}
 			
-			Debug.Log(tries);
+			//Debug.Log(tries);
 			
 			timer -= spawn_interval;
 			
