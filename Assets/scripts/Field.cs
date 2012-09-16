@@ -22,7 +22,7 @@ public class Field : MonoBehaviour {
 			angleValue = Input.gyro.attitude.eulerAngles;
 		} else if (Input.acceleration != Vector3.zero) {
 //		} else if (Input.compass.enabled) {
-			Debug.Log("Using accel: " + Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles.ToString());
+			//Debug.Log("Using accel: " + Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles.ToString());
 			if (Input.acceleration.normalized == Vector3.zero) {
 				angleValue = Vector3.zero;
 			} else {
@@ -31,19 +31,19 @@ public class Field : MonoBehaviour {
 				angleValue = Quaternion.LookRotation(Input.acceleration.normalized).eulerAngles;
 			}
 		} else {
-//			angleValue = Vector3.zero;
-//		
-//			if (Input.GetKey(KeyCode.D)) {
-//				angleValue.z = -angleCap;
-//			} else if (Input.GetKey(KeyCode.A)) {
-//				angleValue.z = angleCap;
-//			}
-//		
-//			if (Input.GetKey(KeyCode.S)) {
-//				angleValue.x = -angleCap;
-//			} else if (Input.GetKey(KeyCode.W)) {
-//				angleValue.x = angleCap;
-//			}
+			angleValue = Vector3.zero;
+		
+			if (Input.GetKey(KeyCode.D)) {
+				angleValue.z = -angleCap;
+			} else if (Input.GetKey(KeyCode.A)) {
+				angleValue.z = angleCap;
+			}
+		
+			if (Input.GetKey(KeyCode.S)) {
+				angleValue.x = -angleCap;
+			} else if (Input.GetKey(KeyCode.W)) {
+				angleValue.x = angleCap;
+			}
 		}
 		
 		//angleValue = Vector3.Scale(angleValue, angleScale);
@@ -59,8 +59,6 @@ public class Field : MonoBehaviour {
 		angleValue.x = Mathf.Clamp(-angleValue.y, -angleCap, angleCap);
 		angleValue.y = 0f;//Mathf.Clamp(angleValue.y, -angleCap, angleCap);
 		angleValue.z = Mathf.Clamp(-x, -angleCap, angleCap);
-		
-		//print (angleValue);
 		
 		transform.rotation = Quaternion.Euler(angleValue);
 	}

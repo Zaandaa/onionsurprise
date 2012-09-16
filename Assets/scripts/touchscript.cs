@@ -68,9 +68,28 @@ public class touchscript : MonoBehaviour {
 		
 	}
 	
+	IEnumerator bottom_scoring(){
+		while(scoring_top)
+			yield return new WaitForSeconds(1f);
+		
+		
+		keyboard = TouchScreenKeyboard.Open(pname, TouchScreenKeyboardType.Default, false);
+		scoring_bot = true;
+		
+	}
+	
+	IEnumerator top_scoring(){
+		while(scoring_bot)
+			yield return new WaitForSeconds(1f);
+		
+		scoring_top = true;
+		keyboard = TouchScreenKeyboard.Open(pname, TouchScreenKeyboardType.Default, false);
+
+	}
 	
 	public void RecordScores(){
 		
+		Debug.Log ("Recording scores...");
 		
 		int toprank = -1;
 		int botrank = -1;
@@ -81,19 +100,18 @@ public class touchscript : MonoBehaviour {
 		foreach(string line in lines){
 			string [] fields = line.Split(' ');
 			int score = int.Parse(fields[fields.Length-1]);
-			if(topscore > score){
-				scoring_top = true;
+			if(topscore > score && toprank == -1){
+				
 				toprank = i;
 				Insert(i, "Placeholder " + topscore);
-				keyboard = TouchScreenKeyboard.Open(pname, TouchScreenKeyboardType.Default, false);
-				
+								
 				
 			}
-			else if(botscore > score){
+			else if(botscore > score && botrank == -1){
 				botrank = i;
-				scoring_bot = true;
 				Insert(i, "Placeholder " + botscore);
-				keyboard = TouchScreenKeyboard.Open(pname, TouchScreenKeyboardType.Default, false);
+				StartCoroutine(bottom_scoring());
+				
 				
 			}
 			
