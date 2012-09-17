@@ -1242,6 +1242,7 @@ MonoBehaviour:
   explosion: {fileID: 100000, guid: a889639a6a07b56488a58b2e8977c7c0, type: 2}
   lives: 3
   TM: {fileID: 1634527148}
+  movement: 0
 --- !u!114 &1967013678
 MonoBehaviour:
   m_ObjectHideFlags: 0
