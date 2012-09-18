@@ -39,7 +39,9 @@ public class onion : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if(other.name.Contains("flower")){
 			//spawn the explosion
-			Instantiate(explosion, transform.position, transform.rotation);
+			GameObject go = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
+			go.active = true;
+			go.transform.parent = transform.parent;
 			//get rid of onion for a little while
 			transform.position = new Vector3(100, 100, -100);
 			StartCoroutine(spawntimer());

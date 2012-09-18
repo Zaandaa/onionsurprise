@@ -5,6 +5,8 @@ public class explosion_script : MonoBehaviour {
 	
 	float timer = 0f;
 	
+	float lifespan = 3.0f;
+	
 	// Use this for initialization
 	void Start () {
 		Debug.Log("Spawned explosion");
@@ -15,7 +17,7 @@ public class explosion_script : MonoBehaviour {
 	void Update () {
 		timer += Time.deltaTime;
 		
-		if(timer > .3)
+		if(timer > lifespan)
 			Destroy(gameObject);
 	
 	}
