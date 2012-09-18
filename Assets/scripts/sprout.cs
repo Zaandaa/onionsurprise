@@ -13,7 +13,7 @@ public class sprout : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-	
+		transform.localRotation = Quaternion.identity;
 	}
 	
 	// Update is called once per frame
