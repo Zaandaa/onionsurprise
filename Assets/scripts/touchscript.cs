@@ -53,6 +53,7 @@ public class touchscript : MonoBehaviour {
 				foreach(string tt in temp)
 					lines[botrank] += tt;
 				
+				pname = "";				
 				scoring_bot = false;
 			}
 			
@@ -107,6 +108,7 @@ public class touchscript : MonoBehaviour {
 				
 				toprank = i;
 				Insert(i, "Placeholder " + topscore);
+				StartCoroutine(top_scoring());
 								
 				
 			}
