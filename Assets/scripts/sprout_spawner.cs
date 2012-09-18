@@ -74,29 +74,29 @@ public class sprout_spawner : MonoBehaviour {
 			int tries = 0;
 			do {
 				coords1 = new Vector3(Random.Range(bufferSize + minDistance/2.0f, side_width - minDistance/2.0f), 0, Random.Range(-side_length/2.0f + minDistance/2.0f, side_length/2.0f - minDistance/2.0f));
-				coords2 = new Vector3(-Random.Range(bufferSize + minDistance/2.0f, side_width - minDistance/2.0f), 0, Random.Range(-side_length/2.0f + minDistance/2.0f, side_length/2.0f - minDistance/2.0f));
-				//coords = bottom_left.transform.position + new Vector3(Random.Range(minDistance/2.0f, side_width - minDistance/2.0f), 0, Random.Range(minDistance/2.0f, side_length - minDistance/2.0f));
-			} while (tries++ < maxSpawnTries && (too_close(coords1) || too_close(coords2)));
+			} while (++tries < maxSpawnTries && too_close(coords1));
 			
 			if (tries < maxSpawnTries) {
 				GameObject inst = Instantiate(sprout) as GameObject;
 				
 				inst.transform.parent = transform;
-				//inst.transform.rotation = transform.parent.rotation;
-				//inst.transform.localRotation = Quaternion.identity;
 				inst.transform.localPosition = coords1;
 				inst.GetComponent<sprout>().is_top = true;
-				
-				inst = Instantiate(sprout) as GameObject;
+			}
+			
+			tries = 0;
+			
+			do {
+				coords2 = new Vector3(-Random.Range(bufferSize + minDistance/2.0f, side_width - minDistance/2.0f), 0, Random.Range(-side_length/2.0f + minDistance/2.0f, side_length/2.0f - minDistance/2.0f));
+			} while (++tries < maxSpawnTries && too_close(coords2));
+			
+			if (tries < maxSpawnTries) {
+				GameObject inst = Instantiate(sprout) as GameObject;
 				
 				inst.transform.parent = transform;
-				//inst.transform.rotation = transform.parent.rotation;
-				//inst.transform.localRotation = Quaternion.identity;
 				inst.transform.localPosition = coords2;
 				inst.GetComponent<sprout>().is_top = false;
 			}
-			
-			//Debug.Log(tries);
 			
 			timer -= spawn_interval;
 			

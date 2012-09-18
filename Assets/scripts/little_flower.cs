@@ -11,7 +11,7 @@ public class little_flower : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		original_size = transform.localScale;
-		transform.localRotation = Quaternion.identity; // I don't understand...
+		transform.localRotation = Quaternion.identity;
 	}
 	
 	// Update is called once per frame
