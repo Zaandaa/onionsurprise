@@ -60,7 +60,7 @@ public class touchscript : MonoBehaviour {
 	}
 	
 	void Insert(int i, string s){
-		for(int k = lines.Length - 1; k >= 0; k--){
+		for(int k = lines.Length - 2; k >= 0; k--){
 			if(k > i)
 				lines[k+1] = lines[k];
 			else if(k == i)
