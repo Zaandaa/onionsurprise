@@ -12,6 +12,11 @@ public class boards : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad(this);
 		
+		GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
+		
+		if(objs.Length > 1)
+			Destroy (gameObject);
+			
 		lines = leaderboards.text.Split('\n');
 	
 	}
