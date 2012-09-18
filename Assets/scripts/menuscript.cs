@@ -14,12 +14,20 @@ public class menuscript : MonoBehaviour {
 	
 	GUIStyle gs = new GUIStyle();
 	
+	GameObject lbs;
+	
 	// Use this for initialization
 	void Start () {
+<<<<<<< HEAD
 		lines = leaderboard.text.Split('\n');
 		Screen.orientation = ScreenOrientation.Portrait;
 		
 		gs.font = font;
+=======
+		lbs = GameObject.Find ("leaderboards");
+		
+		
+>>>>>>> 1d9c567da2c7205a1bc7b254e009398bf23ae121
 	}
 	
 	// Update is called once per frame
@@ -47,6 +55,8 @@ public class menuscript : MonoBehaviour {
 			
 		}
 		else if(which_menu == "Leaderboard"){
+			lbs = GameObject.Find ("leaderboards");
+			lines = lbs.GetComponent<boards>().lines;	
 			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), leader_background);
 			
 			for(int i = 0; i < (Screen.height - 80)/25 && i < lines.Length; i++){
@@ -54,7 +64,7 @@ public class menuscript : MonoBehaviour {
 			}
 			
 			
-			if(GUI.Button(new Rect(50, 8*Screen.height/10, Screen.width - 100, 50), "Back"))
+			if(GUI.Button(new Rect(50, 8*Screen.height/10, Screen.width - 100, 50), transparent, ""))
 				which_menu = "Main";
 			
 		}

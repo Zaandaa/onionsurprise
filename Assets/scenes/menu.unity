@@ -195,3 +195,42 @@ MonoBehaviour:
   leader_background: {fileID: 2800000, guid: 24b498612ff8e6c448429f092f6fdb12, type: 1}
   transparent: {fileID: 2800000, guid: f4a49089f3841194aa734ac1d9e094d1, type: 1}
   skin: {fileID: 11400000, guid: 26e838c24aa9f8541878eba9d76db05a, type: 2}
+--- !u!1 &821787331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 821787332}
+  - 114: {fileID: 821787333}
+  m_Layer: 0
+  m_Name: leaderboards
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &821787332
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 821787331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.7105293, y: -25.2539368, z: -4.15433884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &821787333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 821787331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a01c6eea7ddf44f809ee2d71dad757, type: 1}
+  m_Name: 
+  leaderboards: {fileID: 4900000, guid: 76c0eb320b0daf34e803f07fe27e0eab, type: 1}
+  lines: []
