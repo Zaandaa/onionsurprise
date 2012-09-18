@@ -14,6 +14,11 @@ public class big_flower : MonoBehaviour {
 	void Start () {
 		original_size = transform.localScale;
 		transform.localRotation = Quaternion.identity; // I don't understand...
+		
+		if(is_top)
+			transform.Rotate(0, 90, 0);
+		else
+			transform.Rotate(0, -90, 0);
 
 	}
 	
@@ -21,12 +26,9 @@ public class big_flower : MonoBehaviour {
 	void Update () {
 		timer+= Time.deltaTime;
 		
-		if(timer < 1f)
-			points = 0;
-		else if(timer < 3f){
+
+		if(timer < 3f){
 			points = 1;
-			if(transform.localScale != original_size*1.1f)
-				transform.localScale = original_size*1.1f;
 		}
 		else if(timer < 6f){
 			points = 3;

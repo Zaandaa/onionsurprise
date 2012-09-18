@@ -19,19 +19,13 @@ public class little_flower : MonoBehaviour {
 		timer+= Time.deltaTime;
 		
 		if(timer < 1f){
-			points = 0;
+			points = 1;
 			
 		}
 		else if(timer < 2f){
-			points = 1;
+			points = 2;
 			if(transform.localScale != original_size*1.1f)
 				transform.localScale = original_size*1.1f;
-		}
-		else{
-			points = 2;
-			if(transform.localScale != original_size*1.3f)
-				transform.localScale = original_size*1.3f;
-			
 		}
 	
 	}
