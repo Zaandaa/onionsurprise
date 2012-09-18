@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class touchscript : MonoBehaviour {
 	
 	//keep track of score here just for funziez
-	int botscore = 0;
-	int topscore = 0;
+	public int botscore = 0;
+	public int topscore = 0;
 	public TextAsset leaderboards;
 	bool scoring_top = false;
 	bool scoring_bot = false;
