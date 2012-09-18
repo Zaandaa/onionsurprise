@@ -11,9 +11,13 @@ public class menuscript : MonoBehaviour {
 	public Texture2D transparent;
 	public GUISkin skin;
 	
+	GameObject lbs;
+	
 	// Use this for initialization
 	void Start () {
-		lines = leaderboard.text.Split('\n');	
+		lbs = GameObject.Find ("leaderboards");
+		
+		lines = lbs.GetComponent<boards>().lines;	
 	}
 	
 	// Update is called once per frame

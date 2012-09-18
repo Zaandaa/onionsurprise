@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System;
 
 public class touchscript : MonoBehaviour {
 	
@@ -13,12 +15,16 @@ public class touchscript : MonoBehaviour {
 	int toprank = -1;
 	int botrank = -1;
 	
+	bool bot_needs = false;
+	bool top_needs = false;
+	
 	bool game_over = false;
 	
 	string pname = "";
 	TouchScreenKeyboard keyboard;
 	TouchScreenKeyboard keyboard2;
 	
+	public GameObject lbs;
 	
 	public string[] lines;
 	
@@ -27,16 +33,22 @@ public class touchscript : MonoBehaviour {
 		if(scoring_top){
 			GUI.Label(new Rect(15, 15, Screen.width-15, 200), "HIGH SCORE TOP PLAYER! ENTER YOUR NAME!");
 			pname = keyboard.text;
+			GUI.Label (new Rect(15, 100, 100, 25), toprank.ToString());
+			GUI.Label (new Rect(15, 75, 100, 25), lines[toprank]);
 			
-			if(keyboard.done){
+			if(!TouchScreenKeyboard.visible){
 				string[] temp = lines[toprank].Split(' ');
+				GUI.Label (new Rect(15, 50, 100, 25), temp.Length + " " + pname);
 				temp[0] = pname;
 				lines[toprank] = "";
 				foreach(string tt in temp)
 					lines[toprank] += tt;
 				
 				pname = "";
+				
+				
 				scoring_top = false;
+				top_needs = false;
 			}
 			
 			
@@ -46,7 +58,7 @@ public class touchscript : MonoBehaviour {
 			GUI.Label(new Rect(15, 15, Screen.width-15, 200), "HIGH SCORE BOTTOM PLAYER! ENTER YOUR NAME!");
 			pname = keyboard2.text;
 			
-			if(keyboard2.done){
+			if(!TouchScreenKeyboard.visible){
 				string[] temp = lines[botrank].Split(' ');
 				temp[0] = pname;
 				lines[botrank] = "";
@@ -54,10 +66,16 @@ public class touchscript : MonoBehaviour {
 					lines[botrank] += tt;
 				
 				pname = "";				
+				
 				scoring_bot = false;
+				bot_needs = false;
 			}
 			
+			
+			
 		}
+		
+		
 		
 	}
 	
@@ -73,8 +91,10 @@ public class touchscript : MonoBehaviour {
 	}
 	
 	IEnumerator bottom_scoring(){
+		bot_needs = true;
+		
 		while(scoring_top)
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(.2f);
 		
 		
 		keyboard2 = TouchScreenKeyboard.Open(pname, TouchScreenKeyboardType.Default, false);
@@ -83,8 +103,10 @@ public class touchscript : MonoBehaviour {
 	}
 	
 	IEnumerator top_scoring(){
+		top_needs = true;
+		
 		while(scoring_bot)
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(.2f);
 		
 		scoring_top = true;
 		keyboard = TouchScreenKeyboard.Open(pname, TouchScreenKeyboardType.Default, false);
@@ -95,8 +117,6 @@ public class touchscript : MonoBehaviour {
 		
 		Debug.Log ("Recording scores...");
 		
-		int toprank = -1;
-		int botrank = -1;
 		int i = 0;
 		
 		
@@ -116,6 +136,7 @@ public class touchscript : MonoBehaviour {
 				botrank = i;
 				Insert(i, "Placeholder " + botscore);
 				StartCoroutine(bottom_scoring());
+				//StartCoroutine(bottom_scoring());
 				
 				
 			}
@@ -132,8 +153,9 @@ public class touchscript : MonoBehaviour {
 	}
 	
 	// Use this for initialization
-	void Start () {		
-		lines = leaderboards.text.Split('\n');
+	void Start () {	
+		lbs = GameObject.Find ("leaderboards");
+		lines = lbs.GetComponent<boards>().lines;
 	
 	}
 	
@@ -141,8 +163,18 @@ public class touchscript : MonoBehaviour {
 	void Update () {
 		
 		
-		if(game_over && !scoring_bot && !scoring_top)
+		if(game_over && !top_needs && !bot_needs){
+			//save new scores
+			/*TextWriter tw = new StreamWriter("text.txt");
+			foreach(string line in lines)
+				tw.WriteLine (line);
+			tw.Close();
+			*/
+			
+		lbs.GetComponent<boards>().lines = lines;	
 			Application.LoadLevel("menu");
+			
+		}
 		
 		
 		for(int i = 0; i < Input.touchCount; i++){
