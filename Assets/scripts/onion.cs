@@ -58,6 +58,7 @@ public class onion : MonoBehaviour {
 			GameObject go = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
 			go.active = true;
 			go.transform.parent = transform.parent;
+			go.transform.localScale = transform.localScale;
 			//get rid of onion for a little while
 			transform.position = new Vector3(100, 100, -100);
 			StartCoroutine(spawntimer());

@@ -17,6 +17,7 @@ public class touchscript : MonoBehaviour {
 	
 	string pname = "";
 	TouchScreenKeyboard keyboard;
+	TouchScreenKeyboard keyboard2;
 	
 	
 	public string[] lines;
@@ -43,15 +44,16 @@ public class touchscript : MonoBehaviour {
 		}
 		else if(scoring_bot){
 			GUI.Label(new Rect(15, 15, Screen.width-15, 200), "HIGH SCORE BOTTOM PLAYER! ENTER YOUR NAME!");
-			pname = keyboard.text;
+			pname = keyboard2.text;
 			
-			if(keyboard.done){
+			if(keyboard2.done){
 				string[] temp = lines[botrank].Split(' ');
 				temp[0] = pname;
 				lines[botrank] = "";
 				foreach(string tt in temp)
 					lines[botrank] += tt;
 				
+				pname = "";				
 				scoring_bot = false;
 			}
 			
@@ -60,7 +62,7 @@ public class touchscript : MonoBehaviour {
 	}
 	
 	void Insert(int i, string s){
-		for(int k = lines.Length - 1; k >= 0; k--){
+		for(int k = lines.Length - 2; k >= 0; k--){
 			if(k > i)
 				lines[k+1] = lines[k];
 			else if(k == i)
@@ -75,7 +77,7 @@ public class touchscript : MonoBehaviour {
 			yield return new WaitForSeconds(1f);
 		
 		
-		keyboard = TouchScreenKeyboard.Open(pname, TouchScreenKeyboardType.Default, false);
+		keyboard2 = TouchScreenKeyboard.Open(pname, TouchScreenKeyboardType.Default, false);
 		scoring_bot = true;
 		
 	}
@@ -106,6 +108,7 @@ public class touchscript : MonoBehaviour {
 				
 				toprank = i;
 				Insert(i, "Placeholder " + topscore);
+				StartCoroutine(top_scoring());
 								
 				
 			}
