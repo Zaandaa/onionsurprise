@@ -13,6 +13,8 @@ public class touchscript : MonoBehaviour {
 	int toprank = -1;
 	int botrank = -1;
 	
+	bool game_over = false;
+	
 	string pname = "";
 	TouchScreenKeyboard keyboard;
 	
@@ -119,6 +121,10 @@ public class touchscript : MonoBehaviour {
 		}
 		//}
 		
+		Debug.Log("Game Over");
+		game_over = true;
+		
+		
 		
 	}
 	
@@ -130,6 +136,11 @@ public class touchscript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+		
+		if(game_over && !scoring_bot && !scoring_top)
+			Application.LoadLevel("menu");
+		
 		
 		for(int i = 0; i < Input.touchCount; i++){
 			if (Input.GetTouch(i).phase.ToString().Equals("Began")) {
