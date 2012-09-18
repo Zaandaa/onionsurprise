@@ -2,6 +2,12 @@ fileFormatVersion: 2
 guid: 4241beab9ca2bb941bb11f15883963cb
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - leaderboard: {instanceID: 0}
+  - main_background: {instanceID: 0}
+  - leader_background: {instanceID: 0}
+  - transparent: {instanceID: 0}
+  - skin: {instanceID: 0}
+  - font: {fileID: 12800000, guid: a0597104599cfe94c8eb3232bd8eec45, type: 1}
   executionOrder: 0
   icon: {instanceID: 0}
