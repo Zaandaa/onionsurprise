@@ -43,6 +43,7 @@ public class onion : MonoBehaviour {
 	}
 	
 	IEnumerator spawntimer(){
+		Debug.Log("spawning... lives " + lives);
 		lives--;
 		yield return new WaitForSeconds(2f);
 		transform.position = spawnpos;
