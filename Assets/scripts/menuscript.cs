@@ -18,16 +18,11 @@ public class menuscript : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-<<<<<<< HEAD
 		lines = leaderboard.text.Split('\n');
 		Screen.orientation = ScreenOrientation.Portrait;
 		
 		gs.font = font;
-=======
 		lbs = GameObject.Find ("leaderboards");
-		
-		
->>>>>>> 1d9c567da2c7205a1bc7b254e009398bf23ae121
 	}
 	
 	// Update is called once per frame

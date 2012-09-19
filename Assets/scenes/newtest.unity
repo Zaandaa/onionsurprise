@@ -205,7 +205,7 @@ TextMesh:
   m_PrefabInternal: {fileID: 2137887582}
   m_GameObject: {fileID: 230311057}
   m_Text: 00
-  m_OffsetZ: 0
+  m_OffsetZ: -.100000001
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c2b18fd1ad2481429875564e9bdd235, type: 1}
   m_Name: 
-  isTop: 1
+  isTop: 0
 --- !u!1 &251882523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1066,7 @@ TextMesh:
   m_PrefabInternal: {fileID: 2137887582}
   m_GameObject: {fileID: 1462826182}
   m_Text: 00
-  m_OffsetZ: 0
+  m_OffsetZ: -.100000001
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c2b18fd1ad2481429875564e9bdd235, type: 1}
   m_Name: 
-  isTop: 0
+  isTop: 1
 --- !u!1 &1634527148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1128,7 @@ MonoBehaviour:
   botscore: 0
   topscore: 0
   leaderboards: {fileID: 4900000, guid: 76c0eb320b0daf34e803f07fe27e0eab, type: 1}
+  lbs: {fileID: 0}
   lines: []
 --- !u!1 &1648105828
 GameObject:
@@ -1574,16 +1575,24 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 6bb62a624f8003b4b976610fd1602e54, type: 2}
     - target: {fileID: 10200002, guid: 8328854c2ad44c8418511258e1b7aaa2, type: 2}
       propertyPath: m_OffsetZ
-      value: 0
+      value: -.100000001
       objectReference: {fileID: 0}
     - target: {fileID: 10200000, guid: 8328854c2ad44c8418511258e1b7aaa2, type: 2}
       propertyPath: m_OffsetZ
-      value: 0
+      value: -.100000001
       objectReference: {fileID: 0}
     - target: {fileID: 2300022, guid: 8328854c2ad44c8418511258e1b7aaa2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6bb62a624f8003b4b976610fd1602e54, type: 2}
+    - target: {fileID: 11400008, guid: 8328854c2ad44c8418511258e1b7aaa2, type: 2}
+      propertyPath: isTop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: 8328854c2ad44c8418511258e1b7aaa2, type: 2}
+      propertyPath: isTop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8328854c2ad44c8418511258e1b7aaa2, type: 2}
   m_RootGameObject: {fileID: 1684556764}
