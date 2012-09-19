@@ -47,7 +47,7 @@ GameObject:
   - 23: {fileID: 2300008}
   - 111: {fileID: 11100000}
   m_Layer: 0
-  m_Name: onion
+  m_Name: onion_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,9 +371,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: .0299999993, z: 0}
-  m_LocalScale: {x: 18.0623245, y: 18.0623245, z: 18.0623245}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 17.8428974, y: 17.8428974, z: 17.8428974}
   m_Children: []
   m_Father: {fileID: 400016}
 --- !u!4 &400006
@@ -781,7 +781,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 09ce61eee03a7c94589777f48baf6263, type: 1}
+  - {fileID: 2100000, guid: 6bb62a624f8003b4b976610fd1602e54, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -835,7 +835,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 09ce61eee03a7c94589777f48baf6263, type: 1}
+  - {fileID: 2100000, guid: 6bb62a624f8003b4b976610fd1602e54, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -875,7 +875,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Mesh: {fileID: 4300000, guid: 1312e23532c3bd842865c493fedde956, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d4d92da4490629e4da7f432e8e7fb936, type: 3}
 --- !u!33 &3300010
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1099,7 +1099,7 @@ TextMesh:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_Text: 00
-  m_OffsetZ: 9
+  m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
@@ -1116,7 +1116,7 @@ TextMesh:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100014}
   m_Text: 00
-  m_OffsetZ: 9
+  m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
